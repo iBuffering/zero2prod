@@ -1,12 +1,12 @@
+default_job = "clippy"
+
 [jobs.clippy]
-command = ["cargo", "clippy", "-q", "--", "-D", "warnings"]
+command = ["cargo", "clippy", "--", "-D", "warnings"]
 on_success = "job:test"
 
 [jobs.test]
-command = ["cargo", "test", "-q"]
+command = ["cargo", "test"]
 on_success = "job:run"
 
 [jobs.run]
-command = ["cargo", "run", "-q"]
-
-default_job = "clippy"
+command = ["cargo", "run"]
